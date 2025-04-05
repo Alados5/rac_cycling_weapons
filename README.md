@@ -2,7 +2,7 @@
 
  Ratchet & Clank mod for RaCMAN: Changes weapons randomly after some time, kills or ammo used.
  
- ** The mod is currently only available for Ratchet & Clank 2: Going Commando**
+ **The mod is currently only available for Ratchet & Clank 2: Going Commando**
  
  The mod has 3 separate modes:
  - Time: swap weapons after a set amount of time
