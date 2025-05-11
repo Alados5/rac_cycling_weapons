@@ -66,17 +66,6 @@ qsValues = {
 	18, 12, 53, 14,
 	17, 43, 44, 09
 }
---[[
-13 = swingshot
-19 = gravity boots
-20 = grindboots
-36 = dynamo
-38 = electrolyzer
-39 = thermanator
-46 = tractor beam
-54 = charge boots
-55 = hypnomatic 
---]]
 qsAddresses = {
 	0x01481C43,
 	0x01481C47,
@@ -87,6 +76,8 @@ qsAddresses = {
 	0x01481C5B,
 	0x01481C5F,
 }
+nQSweapons = #qsAddresses
+
 hpExpAddr 	 = 0x1329AA4
 currHeldAddr = 0x147F1BB --0x148042B
 prevHeldAddr = 0x1329A9F
@@ -133,7 +124,7 @@ end
 
 -- Clean weapon from quick select
 function cleanQS(wid)
-	for i=2,8 do
+	for i=2,nQSweapons do
 		itemInSlot = bytestoint(Ratchetron:ReadMemory(GAME_PID, qsAddresses[i], 1))
 		if itemInSlot == qsValues[wid] then
 			Ratchetron:WriteMemory(GAME_PID, qsAddresses[i], 1, inttobytes(0,1))
@@ -205,8 +196,8 @@ function chooseRandomWeapon()
 	Ratchetron:WriteMemory(GAME_PID, qsAddresses[1], 1, inttobytes(qsValues[randWid],1))
 
 	-- Make it the next weapon to shoot and previous held item
-	Ratchetron:WriteMemory(GAME_PID, prevHeldAddr, 1, inttobytes(qsValues[randWid],1))
 	Ratchetron:WriteMemory(GAME_PID, currHeldAddr, 1, inttobytes(qsValues[randWid],1))
+	Ratchetron:WriteMemory(GAME_PID, prevHeldAddr, 1, inttobytes(qsValues[randWid],1))
 	
 	print("Changed weapon to... "..weaponNames[randWid].."!")
 	return randWid
@@ -340,9 +331,9 @@ function OnUnload()
 	-- Remove the top QS slot
 	Ratchetron:WriteMemory(GAME_PID, qsAddresses[1], 1, inttobytes(0,1))
 	
-	-- Make the Lancer the next weapon to shoot and previous held item
-	Ratchetron:WriteMemory(GAME_PID, prevHeldAddr, 1, inttobytes(qsValues[1],1))
+	-- Change the next weapon to shoot and previous held item to the first weapon
 	Ratchetron:WriteMemory(GAME_PID, currHeldAddr, 1, inttobytes(qsValues[1],1))
+	Ratchetron:WriteMemory(GAME_PID, prevHeldAddr, 1, inttobytes(qsValues[1],1))
 	
 	print("Unloaded!")
 end
