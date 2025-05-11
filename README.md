@@ -1,9 +1,7 @@
 # R&C Cycling Weapons Mod
 
  Ratchet & Clank mod for RaCMAN: Changes weapons randomly after some time, kills or ammo used.
- 
- **The mod is currently only available for Ratchet & Clank 2: Going Commando**
- 
+  
  The mod has 3 separate modes:
  - Time: swap weapons after a set amount of time
  - Kill: swap weapons after killing a specific amount of enemies
@@ -15,6 +13,7 @@
 - A Homebrew Enabled (HEN) PS3
    - There are guides available online
    - The RPCS3 Emulator is not tested
+   - Other CFW or Jailbreaks might work but are also not tested
 - [RaCMAN](https://github.com/MichaelRelaxen/racman) installed
 - A digital PAL PS3 version of the compatible R&C games
 
@@ -26,7 +25,7 @@
 2. Open the `mods` folder in the RaCMAN folder
 3. Unzip the downloaded zip file(s)
 4. Place each mod folder inside the corresponding game's folder
-   - R&C1 is `NPEA00385`
+   - R&C1 is `NPEA00385` (currently unavailable)
    - R&C2 is `NPEA00386`
    - R&C3 is `NPEA00387`
 
