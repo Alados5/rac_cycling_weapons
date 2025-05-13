@@ -5,7 +5,9 @@
  The mod has 3 separate modes:
  - Time: swap weapons after a set amount of time
  - Kill: swap weapons after killing a specific amount of enemies
-   - **Disclaimer:** The mod can only detect experience increases on a frame, so killing several enemies on the same frame counts as 1 single kill.
+   - **Disclaimer:** Kill detection is not direct and changes depending on the game:
+     - For R&C1, the mod uses an address that changes when you deal or receive damage, plus changes in bolts and using ammo
+     - For R&C2-3, the mod detects experience increases each frame, so killing several enemies at once counts as 1 single kill
  - Ammo: swap weapons after using a predefined amount of ammo
  
 ## Pre-requisites
@@ -25,7 +27,7 @@
 2. Open the `mods` folder in the RaCMAN folder
 3. Unzip the downloaded zip file(s)
 4. Place each mod folder inside the corresponding game's folder
-   - R&C1 is `NPEA00385` (currently unavailable)
+   - R&C1 is `NPEA00385`
    - R&C2 is `NPEA00386`
    - R&C3 is `NPEA00387`
 
@@ -51,11 +53,13 @@
    - `avoidRepeats`: A boolean (`true`/`false`) to avoid rolling the same weapon twice in a row. When set to `true`, if the random number generator picks the current weapon again, it will reroll until generating a different weapon.
    - `swapTime`: If `swapMode = 'TIME'`, determines the time in seconds between weapon changes. Minimum is 10 seconds.
    - `swapKills`: If `swapMode = 'KILL'`, determines the enemies that need to be killed for weapons to change.
-      - **Disclaimer:** `'KILL'` mode works with experience increases, so if you kill multiple enemies on the same frame, it will count as 1 single kill towards the total.
+      - **Disclaimer:** `'KILL'` mode is not direct and changes depending on the game:
+        - For R&C1, the mod uses an address that changes when you deal or receive damage, plus changes in bolts and using ammo.
+        - For R&C2-3, the mod detects experience increases each frame, so killing several enemies at once counts as 1 single kill.
    - `swapAmmo`: If `swapMode = 'AMMO'`, this list determines the amount of ammo each weapon will have on swap. The next swap will happen when ammo reaches 0. If you set any value here to 0, the weapon will be banned. Infinite ammo weapons are banned from this mode.
    - `banAmmoIncreases`: A boolean (`true`/`false`) to remove any ammo increases if `swapMode = 'AMMO'`. This will roll back ammo from crates and purchased in vendors, to ensure the swap happens after the configured ammo is used and not more.
    - `bannedWeapons`: A list of booleans (`true`/`false`) to remove specific weapons from the pool. When set to true, they will never get chosen at random.
-      - Recommended options are the Clank Zapper, Synthenoid and Shield Charger, as they tend to crash the game (they are not weapons held by Ratchet)
+      - Recommended options are weapons not held by Ratchet: Clank Zapper, Synthenoid and Shield Charger.
 
 
 ## Running the mod
