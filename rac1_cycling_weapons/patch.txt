@@ -1,0 +1,7 @@
+#- name: Cycling Weapons
+#- author: Alados5
+#- href: https://github.com/Alados5/rac_cycling_weapons
+#- version: 1.0
+#- description: Swap weapons randomly after some time, kills or ammo used!
+
+automation: main.lua
