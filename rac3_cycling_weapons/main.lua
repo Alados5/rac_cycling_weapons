@@ -7,7 +7,7 @@
 
 require 'config'
 
--- Ordered by menu: 1=Lancer, 2=Gravity Bomb, ..., 23=RYNO II, 24=Clank Zapper
+-- Ordered by menu
 weaponNames = {
 	"Shock Blaster", "Nitro Launcher", "N60 Storm", "Plasma Whip", "Infector",
 	"Suck Cannon", "Spitting Hydra", "Agents of Doom", "Flux Rifle", "Annihilator",

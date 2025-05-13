@@ -7,7 +7,7 @@
 
 require 'config'
 
--- Ordered by menu: 1=Lancer, 2=Gravity Bomb, ..., 23=RYNO II, 24=Clank Zapper
+-- Ordered by menu
 weaponNames = {
 	"Lancer", "Gravity Bomb", "Chopper", "Seeker Gun",
 	"Pulse Rifle", "Miniturret Glove", "Blitz Gun", "Shield Charger",
